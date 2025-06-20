@@ -1,0 +1,1 @@
+console.log("MailTracker Firefox Extension Loaded");
