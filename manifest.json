@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Mail Tracker",
+  "version": "1.0",
+  "description": "adds a pixel to track mails",
+  "icons": {
+    "48": "icon.png",
+    "128": "icon_128.png" 
+  },
+  "permissions": [
+    "https://mail.google.com/",  
+    "storage"                  
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false        
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Mail Tracker"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true       
+    }
+  ],
+  "web_accessible_resources": [
+    "pixel.png"  
+  ]
+}
